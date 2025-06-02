@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <title>Feedback Portal</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <nav> 
+  <div class="navbar-title">Feedback Portal</div>
+  <div class="nav-links">
+   <button onclick="showTab('form')">Submit Feedback</button>
+   <button onclick="showTab('list')">View Feedback</button>
+   <button onclick="showTab('about')">About</button>
+  </div>
+ </nav>
+
+ <div class="container">
+  <div id="form" class="tab-section active">
+   <h1>Submit Feedback</h1>
+   <form id="feedbackForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <textarea id="message" placeholder="Your Feedback" required></textarea>
+    <label>Rating:</label>
+    <div class="rating" id="ratingStars"></div>
+    <label for="category">Category:</label>
+    <select id="category" required>
+     <option value="Bug">Bug</option>
+     <option value="Suggestion">Suggestion</option>
+     <option value="Idea">Idea</option>
+     <option value="Other">Other</option>
+    </select>
+    <button type="submit">Submit</button>
+   </form>
+   <p id="responseMessage"></p>
+  </div>
+
+  <div id="list" class="tab-section">
+   <h1>Feedback Entries</h1>
+   <div class="controls">
+    <select id="filterCategory">
+     <option value="All">All Categories</option>
+     <option value="Bug">Bug</option>
+     <option value="Suggestion">Suggestion</option>
+     <option value="Idea">Idea</option>
+     <option value="Other">Other</option>
+    </select>
+    <button id="sortBtn">Sort: Newest</button>
+    <button id="exportBtn">Export CSV</button>
+    <button id="clearAllBtn" style="display:none;">Clear All</button>
+   </div>
+   <div id="feedbackList"></div>
+  </div>
+
+  <div id="about" class="tab-section">
+   <h1>About</h1>
+   <p>This is a simple feedback app called <strong>Feedback Portal</strong>, built using only HTML, CSS, and JavaScript. It saves your feedback in your browser and allows sorting, filtering, and exporting to CSV.</p>
+  </div>
+ </div>
+
+ <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+ <script src="jscrit.js"></script>
+</body>
+</html>
